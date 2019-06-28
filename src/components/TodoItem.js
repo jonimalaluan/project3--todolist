@@ -4,7 +4,7 @@ class TodoItem extends Component {
   //  state={  };
 
   render() {
-    const { title } = this.props;
+    const { title, handleDelete } = this.props;
     return (
       <li className="list-group-item text-capitalize d-flex justify-content-between my-2">
         <h6>{title}</h6>
@@ -13,7 +13,7 @@ class TodoItem extends Component {
             <i className="fas fa-pen" />
           </span>
           <span className="mx-2 text-danger">
-            <i className="fas fa-trash" />
+            <i className="fas fa-trash" onClick={handleDelete} />
           </span>
         </div>
       </li>
