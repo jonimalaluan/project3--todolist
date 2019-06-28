@@ -35,6 +35,15 @@ class App extends Component {
     });
   };
 
+  handleClear = e => {
+    this.setState({
+      items: [],
+      item: "",
+      id: uuid(),
+      editItem: false
+    });
+  };
+
   render() {
     return (
       <div className="container">
@@ -46,7 +55,7 @@ class App extends Component {
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
             />
-            <TodoList items={this.state.items} />
+            <TodoList items={this.state.items} handleClear={this.handleClear} />
           </div>
         </div>
       </div>
